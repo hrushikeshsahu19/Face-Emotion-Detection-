@@ -21,6 +21,8 @@ model.add(Conv2D(64, (3, 3), padding="same", activation="relu"))
 model.add(Flatten())
 model.add(Dense(64, activation='relu'))
 model.add(Dense(7, activation='softmax'))
+![img8](https://user-images.githubusercontent.com/66518885/115498419-259afc00-a28b-11eb-9e00-249dc2d343be.png)
+
 
 model_2 Using facial-emotion-recognition and cv2 library
 ---------------------------------------------------------------
