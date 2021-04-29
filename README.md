@@ -29,3 +29,36 @@ model_2 Using facial-emotion-recognition and cv2 library
 
 ![img7](https://user-images.githubusercontent.com/66518885/115498180-ba512a00-a28a-11eb-9441-7d959b9c876d.png)
 
+import cv2
+import numpy as np
+from google.colab.patches import cv2_imshow
+video_capture = cv2.VideoCapture("/content/drive/MyDrive/AlmaBetter/Cohort Aravali/Module 7/Week 2/vdo.mp4")
+
+while(1):
+
+    # Take each frame
+    _, frame =  video_capture.read()
+
+
+    # Convert BGR to HSV
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
+    # define range of blue color in HSV
+    lower_blue = np.array([110,50,50])
+    upper_blue = np.array([130,255,255])
+
+    # Threshold the HSV image to get only blue colors
+    mask = cv2.inRange(hsv, lower_blue, upper_blue)
+
+    # Bitwise-AND mask and original image
+    res = cv2.bitwise_and(frame,frame, mask= mask)
+
+    cv2_imshow(frame)
+    cv2_imshow(mask)
+    cv2_imshow(res)
+    k = cv2.waitKey(5) & 0xFF
+    if k == 27:
+        break
+cv2.close()
+cv2.destroyAllWindows()
+
