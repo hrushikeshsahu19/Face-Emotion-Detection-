@@ -29,6 +29,9 @@ model_2 Using facial-emotion-recognition and cv2 library
 
 ![img7](https://user-images.githubusercontent.com/66518885/115498180-ba512a00-a28a-11eb-9441-7d959b9c876d.png)
 
+model_3 for  emotion detection through video
+-----------------------------------------------
+
 import cv2
 import numpy as np
 from google.colab.patches import cv2_imshow
